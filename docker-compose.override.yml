@@ -11,4 +11,3 @@ services:
     command: make dev
     volumes:
       - "./app:/app"
-

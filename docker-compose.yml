@@ -4,7 +4,6 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile
-    volumes:
-      - ./app:/app
-    command: ["npm", "test"]
+      dockerfile: Dockerfile.production
+      image: heksletdockerimage
+    command: make test
