@@ -5,5 +5,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-      image: heksletdockerimage
+    image: heksletdockerimage
     command: make test
