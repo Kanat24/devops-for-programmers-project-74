@@ -37,7 +37,7 @@ ci:
 	docker-compose -f docker-compose.yml run --rm app make test
 
 test-prod
-	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+	docker-compose -f docker-compose.yml up --abort-on-container-exit
 
 build-prod
 	docker-compose -f docker-compose.yml build app
