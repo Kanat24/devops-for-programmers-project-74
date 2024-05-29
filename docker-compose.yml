@@ -7,3 +7,19 @@ services:
       dockerfile: Dockerfile.production
     image: heksletdockerimage
     command: make test
+    volumes:
+      - ".env.example:/app/.env" 
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
