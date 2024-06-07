@@ -8,11 +8,11 @@ services:
     image: heksletdockerimage
     command: make test
     environment:
-      - DB_HOST=db
-      - DB_PORT=5432
-      - DB_USER=postgres
-      - DB_PASSWORD=password
-      - DB_NAME=name
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=password
+      - DATABASE_NAME=name
     volumes:
       - ".env.example:/app/.env" 
     depends_on:
